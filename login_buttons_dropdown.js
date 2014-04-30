@@ -33,7 +33,6 @@
             loginButtonsSession.resetMessages();
             loginButtonsSession.set('inChangePasswordFlow', true);
             Meteor.flush();
-            toggleDropdown();
         }
     });
 

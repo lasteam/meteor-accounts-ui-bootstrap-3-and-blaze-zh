@@ -1,7 +1,7 @@
-meteor-accounts-ui-bootstrap-3
+meteor-accounts-ui-bs3-and-blaze
 =====================================
 
-Meteor accounts-ui styled with twitter/bootstrap 3 and blaze (Meteor 0.8) update
+Meteor accounts-ui styled with Twitter Bootstrap 3 and Blaze support (Meteor 0.8 update).
 
 Prerequisites
 -------------
@@ -19,7 +19,7 @@ Bootstrap 3 (`bootstrap-3`) is automatically included.
 How to add to your meteor app
 -----------------------------
 
-`mrt add accounts-ui-bootstrap-3-and-blaze`
+`mrt add accounts-ui-bs3-and-blaze`
 
 How to use
 -------------

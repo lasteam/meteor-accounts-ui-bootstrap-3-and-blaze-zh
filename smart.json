@@ -1,9 +1,9 @@
 {
-  "name": "accounts-ui-bootstrap-3-and-blaze",
+  "name": "accounts-ui-bs3-and-blaze",
   "description": "Meteor's accounts templates styled for Bootstrap 3 and Blaze support",
   "homepage": "https://github.com/jzgoda/meteor-accounts-ui-bootstrap-3-and-blaze",
   "author": "Jon Zgoda <jon@zgoda.us>",
-  "version": "0.4",
+  "version": "0.4.0",
   "git": "https://github.com/jzgoda/meteor-accounts-ui-bootstrap-3-and-blaze",
   "packages": {
 	"bootstrap-3": {}

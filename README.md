@@ -11,9 +11,7 @@ http://oortcloud.github.com/meteorite/
 
 `[sudo] npm install -g meteorite`
 
-You will also need at least one accounts plugin: `mrt add accounts-password`, `mrt add accounts-github`, etc.
-
-Bootstrap 3 (`bootstrap-3`) is automatically included.
+You will also need at least one accounts plugin (`accounts-password`, `accounts-github`, etc.), and a Bootstrap 3 package (such as `bootstrap-3`).
 
 
 How to add to your meteor app

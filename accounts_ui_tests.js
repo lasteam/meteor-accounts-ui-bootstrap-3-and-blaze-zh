@@ -7,11 +7,11 @@ Tinytest.add('accounts-ui - config validates keys', function (test) {
   });
 
   test.throws(function () {
-    Accounts.ui.config({passwordSignupFields: "not a valid option"});
+    Accounts.ui.config({passwordSignupFields: "不是一个有效的设置"});
   });
 
   test.throws(function () {
-    Accounts.ui.config({requestPermissions: {facebook: "not an array"}});
+    Accounts.ui.config({requestPermissions: {facebook: "不是一个数组"}});
   });
 });
 

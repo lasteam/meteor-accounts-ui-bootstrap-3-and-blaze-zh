@@ -34,7 +34,7 @@
         var services = Accounts._loginButtons.getLoginServices();
         if (services.length !== 1)
             throw new Error(
-                "Shouldn't be rendering this template with more than one configured service");
+                "不应该使该模板有一个以上配置的服务");
         return services[0];
     };
 
@@ -134,7 +134,7 @@
         if (username.length >= 3) {
             return true;
         } else {
-            loginButtonsSession.errorMessage("Username must be at least 3 characters long");
+            loginButtonsSession.errorMessage("用户名至少要有3个字节");
             return false;
         }
     };
@@ -147,7 +147,7 @@
         if (re.test(email)) {
             return true;
         } else {
-            loginButtonsSession.errorMessage("Invalid email");
+            loginButtonsSession.errorMessage("无效的电子邮件");
             return false;
         }
     };
@@ -155,7 +155,7 @@
         if (password.length >= 6) {
             return true;
         } else {
-            loginButtonsSession.errorMessage("Password must be at least 6 characters long");
+            loginButtonsSession.errorMessage("密码只要要有6个字节");
             return false;
         }
     };

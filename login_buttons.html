@@ -8,7 +8,7 @@
   <div id="login-buttons" class="login-buttons-dropdown-align-{{align}}"></div>
   {{#if currentUser}}
     {{#if loggingIn}}
-      {{! We aren't actually logged in yet; we're just setting Meteor.userId
+      {{! 实际上刚才我们并没有记录; 我们只是设置 Meteor.userId
           optimistically during an at-startup login-with-token. We expose this
           state so other UIs can treat it specially, but we'll just treat it
           as logged out. }}
@@ -38,12 +38,12 @@
 </template>
 
 <template name="_loginButtonsLoggedOut">
-  {{#if services}} {{! if at least one service is configured }}
+  {{#if services}} {{! 如果至少配置了一个服务 }}
     {{#if configurationLoaded}}
-      {{#if dropdown}} {{! if more than one service configured, or password is configured}}
+      {{#if dropdown}} {{! 如果配置了多个服务，或配置密码}}
         {{> _loginButtonsLoggedOutDropdown}}
       {{else}}
-        {{#with singleService}} {{! at this point there must be only one configured services }}
+        {{#with singleService}} {{! 在这个点上只能有一个配置的服务 }}
           <div class="login-buttons-with-only-one-button">
             {{#if loggingIn}}
               {{> _loginButtonsLoggingInSingleLoginButton}}
@@ -55,7 +55,7 @@
       {{/if}}
     {{/if}}
   {{else}}
-    <div class="no-services">No login services configured</div>
+    <div class="no-services">没有配置登录服务</div>
   {{/if}}
 </template>
 

@@ -208,7 +208,7 @@
     Template._loginButtonsLoggedOutPasswordService.fields = function() {
         var loginFields = [{
             fieldName: 'username-or-email',
-            fieldLabel: 'Username or Email',
+            fieldLabel: '用户名或者邮箱',
             visible: function() {
                 return _.contains(
                     ["USERNAME_AND_EMAIL_CONFIRM", "USERNAME_AND_EMAIL", "USERNAME_AND_OPTIONAL_EMAIL"],
@@ -216,20 +216,20 @@
             }
         }, {
             fieldName: 'username',
-            fieldLabel: 'Username',
+            fieldLabel: '用户名',
             visible: function() {
                 return Accounts.ui._passwordSignupFields() === "USERNAME_ONLY";
             }
         }, {
             fieldName: 'email',
-            fieldLabel: 'Email',
+            fieldLabel: '邮箱',
             inputType: 'email',
             visible: function() {
                 return Accounts.ui._passwordSignupFields() === "EMAIL_ONLY";
             }
         }, {
             fieldName: 'password',
-            fieldLabel: 'Password',
+            fieldLabel: '密码',
             inputType: 'password',
             visible: function() {
                 return true;
@@ -238,7 +238,7 @@
 
         var signupFields = [{
             fieldName: 'username',
-            fieldLabel: 'Username',
+            fieldLabel: '用户名',
             visible: function() {
                 return _.contains(
                     ["USERNAME_AND_EMAIL_CONFIRM", "USERNAME_AND_EMAIL", "USERNAME_AND_OPTIONAL_EMAIL", "USERNAME_ONLY"],
@@ -246,7 +246,7 @@
             }
         }, {
             fieldName: 'email',
-            fieldLabel: 'Email',
+            fieldLabel: '邮箱',
             inputType: 'email',
             visible: function() {
                 return _.contains(
@@ -255,21 +255,21 @@
             }
         }, {
             fieldName: 'email',
-            fieldLabel: 'Email (optional)',
+            fieldLabel: '邮箱（可选）',
             inputType: 'email',
             visible: function() {
                 return Accounts.ui._passwordSignupFields() === "USERNAME_AND_OPTIONAL_EMAIL";
             }
         }, {
             fieldName: 'password',
-            fieldLabel: 'Password',
+            fieldLabel: '密码',
             inputType: 'password',
             visible: function() {
                 return true;
             }
         }, {
             fieldName: 'password-again',
-            fieldLabel: 'Password (again)',
+            fieldLabel: '密码（再次输入）',
             inputType: 'password',
             visible: function() {
                 // No need to make users double-enter their password if
@@ -331,21 +331,21 @@
     Template._loginButtonsChangePassword.fields = function() {
         return [{
             fieldName: 'old-password',
-            fieldLabel: 'Current Password',
+            fieldLabel: '当前密码',
             inputType: 'password',
             visible: function() {
                 return true;
             }
         }, {
             fieldName: 'password',
-            fieldLabel: 'New Password',
+            fieldLabel: '新的密码',
             inputType: 'password',
             visible: function() {
                 return true;
             }
         }, {
             fieldName: 'password-again',
-            fieldLabel: 'New Password (again)',
+            fieldLabel: '新的密码（再次输入）',
             inputType: 'password',
             visible: function() {
                 // No need to make users double-enter their password if
@@ -423,7 +423,7 @@
 
         Meteor.loginWithPassword(loginSelector, password, function(error, result) {
             if (error) {
-                loginButtonsSession.errorMessage(error.reason || "Unknown error");
+                loginButtonsSession.errorMessage(error.reason || "未知的错误");
             } else {
                 loginButtonsSession.closeDropdown();
             }
@@ -494,7 +494,7 @@
 
         Accounts.createUser(options, function(error) {
             if (error) {
-                loginButtonsSession.errorMessage(error.reason || "Unknown error");
+                loginButtonsSession.errorMessage(error.reason || "未知的错误");
             } else {
                 loginButtonsSession.closeDropdown();
             }
@@ -510,12 +510,12 @@
                 email: email
             }, function(error) {
                 if (error)
-                    loginButtonsSession.errorMessage(error.reason || "Unknown error");
+                    loginButtonsSession.errorMessage(error.reason || "未知的错误");
                 else
-                    loginButtonsSession.infoMessage("Email sent");
+                    loginButtonsSession.infoMessage("发送电子邮件");
             });
         } else {
-            loginButtonsSession.infoMessage("Email sent");
+            loginButtonsSession.infoMessage("发送电子邮件");
         }
     };
 
@@ -535,9 +535,9 @@
 
         Accounts.changePassword(oldPassword, password, function(error) {
             if (error) {
-                loginButtonsSession.errorMessage(error.reason || "Unknown error");
+                loginButtonsSession.errorMessage(error.reason || "未知的错误");
             } else {
-                loginButtonsSession.infoMessage("Password changed");
+                loginButtonsSession.infoMessage("密码已更改");
 
                 // wait 3 seconds, then expire the msg
                 Meteor.setTimeout(function() {
@@ -554,7 +554,7 @@
             // notably not trimmed. a password could (?) start or end with a space
             var password = elementValueById('login-password');
             if (password !== passwordAgain) {
-                loginButtonsSession.errorMessage("Passwords don't match");
+                loginButtonsSession.errorMessage("密码不匹配");
                 return false;
             }
         }

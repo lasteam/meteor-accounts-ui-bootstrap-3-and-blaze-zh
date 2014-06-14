@@ -27,10 +27,10 @@
   {{/if}}
 
   {{#if allowChangingPassword}}
-    <button class="btn btn-default btn-block" id="login-buttons-open-change-password">Change password</button>
+    <button class="btn btn-default btn-block" id="login-buttons-open-change-password"><i class='fa fa-pencil'></i> 修改密码</button>
   {{/if}}
 
-  <button class="btn btn-block btn-primary" id="login-buttons-logout">Sign out</button>
+  <button class="btn btn-block btn-primary" id="login-buttons-logout">登出</button>
 </template>
 
 <!--            -->
@@ -39,7 +39,7 @@
 <template name="_loginButtonsLoggedOutDropdown">
   <li id="login-dropdown-list" class="dropdown">
     <a class="dropdown-toggle"  data-toggle="dropdown">
-      Sign In{{#unless forbidClientAccountCreation}} / Up{{/unless}}
+      登录{{#unless forbidClientAccountCreation}} / 注册{{/unless}}
       <b class="caret"></b>
     </a>
     <div class="dropdown-menu">
@@ -82,18 +82,18 @@
     {{/each}}
     <button class="btn btn-primary col-sm-12" id="login-buttons-password" type="button">
       {{#if inSignupFlow}}
-        Create
+        注册
       {{else}}
-        Sign in
+        登录
       {{/if}}
     </button>
     {{#if inLoginFlow}}
       <div id="login-other-options">
       {{#if showForgotPasswordLink}}
-        <a id="forgot-password-link" class="pull-left" >Forgot password?</a>
+        <a id="forgot-password-link" class="pull-left" >忘记密码?</a>
       {{/if}}
       {{#if showCreateAccountLink}}
-        <a id="signup-link" class="pull-right" >Create account</a>
+        <a id="signup-link" class="pull-right" >创建帐户</a>
       {{/if}}
       </div>
     {{/if}}
@@ -109,13 +109,13 @@
     <div id="forgot-password-email-label-and-input"> {{! XXX we should probably use loginButtonsFormField }}
       <input id="forgot-password-email" type="email" placeholder="E-mail" class="form-control" />
     </div>
-    <button class="btn btn-primary login-button-form-submit col-sm-12" id="login-buttons-forgot-password">Reset password</button>
+    <button class="btn btn-primary login-button-form-submit col-sm-12" id="login-buttons-forgot-password">重置密码</button>
     {{> _loginButtonsBackToLoginLink}}
   </div>
 </template>
 
 <template name="_loginButtonsBackToLoginLink">
-    <button id="back-to-login-link" class="btn btn-default col-sm-12">Cancel</button>
+    <button id="back-to-login-link" class="btn btn-default col-sm-12">取消</button>
 </template>
 
 <template name="_loginButtonsFormField">
@@ -129,6 +129,6 @@
   {{#each fields}}
     {{> _loginButtonsFormField}}
   {{/each}}
-  <button class="btn btn-primary" id="login-buttons-do-change-password">Change password</button>
-  <button class="btn btn-default login-close">Close</button>
+  <button class="btn btn-primary" id="login-buttons-do-change-password">修改密码</button>
+  <button class="btn btn-default login-close">关闭</button>
 </template>

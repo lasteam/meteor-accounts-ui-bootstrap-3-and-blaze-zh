@@ -1,5 +1,5 @@
 Package.describe({
-  summary: "Bootstrap styled version of login widgets"
+  summary: "Bootstrap风格的登录窗口样式"
 });
 
 Package.on_use(function (api) {

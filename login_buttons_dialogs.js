@@ -66,7 +66,7 @@
       loginButtonsSession.get('resetPasswordToken'), newPassword,
       function (error) {
         if (error) {
-          loginButtonsSession.errorMessage(error.reason || "Unknown error");
+          loginButtonsSession.errorMessage(error.reason || "未知的错误");
         } else {
           loginButtonsSession.set('resetPasswordToken', null);
           Accounts._enableAutoLogin();
@@ -114,7 +114,7 @@
       loginButtonsSession.get('enrollAccountToken'), password,
       function (error) {
         if (error) {
-          loginButtonsSession.errorMessage(error.reason || "Unknown error");
+          loginButtonsSession.errorMessage(error.reason || "未知的错误");
         } else {
           loginButtonsSession.set('enrollAccountToken', null);
           Accounts._enableAutoLogin();
@@ -189,7 +189,7 @@
         // Configure this login service
         Meteor.call("configureLoginService", configuration, function (error, result) {
           if (error)
-            Meteor._debug("Error configuring login service " + serviceName, error);
+            Meteor._debug("错误配置登录服务 " + serviceName, error);
           else
             loginButtonsSession.set('configureLoginServiceDialogVisible', false);
         });
